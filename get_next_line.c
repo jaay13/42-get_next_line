@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:21 by jakoch            #+#    #+#             */
-/*   Updated: 2026/05/31 13:20:48 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/05/31 16:47:26 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static char	*read_next_line(int fd, char *stash);
 static char	*append_buf(char *stash, char *buf);
+static char	*get_output_from(char *stash);
+static char	*clean_written_from(char *stash);
 
 char	*get_next_line(int fd)
 {
@@ -38,8 +40,6 @@ static char	*read_next_line(int fd, char *stash)
 	char	*buf;
 	int		bytes_read;
 
-	//if (!stash)
-		//stash = ft_calloc(1, 1);
 	buf = malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return (NULL);
@@ -61,29 +61,44 @@ static char	*read_next_line(int fd, char *stash)
 static char	*append_buf(char *stash, char *buf)
 {
 	char	*new_stash;
+	size_t	len1;
+	size_t	len2;
 
-	new_stash = ft_strjoin(stash, buf);
-	free(stash);
+	len1 = ft_strlen(stash);
+	len2 = ft_strlen(buf);
+	new_stash = malloc(len1 + len2 + 1);
+	if (!new_stash)
+		return (NULL);
+	ft_strlcpy(new_stash, stash, len1 + 1);
+	ft_strlcpy(new_stash + len1, buf, len2 + 1);
 	return (new_stash);
 }
 
 static char	*get_output_from(char *stash)
 {
-	char *output;
-	int len;
+	int	len;
 
-	output = stash;
 	len = 0;
-	if (!*output)
-		return (NULL);
-	while (output[len] && output[len] != '\n')
+	while (stash[len] && stash[len] != '\n')
 		len++;
-	if (output[len] == '\n')
+	if (stash[len] == '\n')
 		len++;
 	return (ft_substr(stash, 0, len));
 }
 
-static char *clean_written_from(char *stash)
+static char	*clean_written_from(char *stash)
 {
-	return(ft_substr());
+	char	*leftover;
+	int		len;
+	int		total_len;
+
+	len = 0;
+	total_len = ft_strlen(stash);
+	while (stash[len] && stash[len] != '\n')
+		len++;
+	if (stash[len] == '\n')
+		len++;
+	leftover = ft_substr(stash, len, total_len - len);
+	free(stash);
+	return (leftover);
 }
