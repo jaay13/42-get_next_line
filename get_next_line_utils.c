@@ -6,28 +6,28 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:49 by jakoch            #+#    #+#             */
-/*   Updated: 2026/05/31 13:02:56 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/05/31 16:20:11 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*str;
-	size_t	len1;
-	size_t	len2;
-	size_t	total_len;
+	void			*res;
+	unsigned char	*ptr;
+	size_t i;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	total_len = len1 + len2 + 1;
-	str = malloc(total_len);
-	if (!str)
+	if (nmemb > 0 && size > SIZE_MAX / nmemb)
 		return (NULL);
-	ft_strlcpy(str, s1, total_len);
-	ft_strlcpy(str + len1, s2, len2 + 1);
-	return (str);
+	res = malloc(nmemb * size);
+	if (!res)
+		return (NULL);
+	ptr = res;
+	i = 0;
+	while (i < nmemb * size)
+		ptr[i++] = 0;
+	return (res);
 }
 
 char	*ft_strchr(const char *s, int c)
