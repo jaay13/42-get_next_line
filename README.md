@@ -62,12 +62,12 @@ This approach matches the subject because it reads as little as possible, works 
 
 ## Files
 
-# Mandatory
+### Mandatory
 - `get_next_line.c`
 - `get_next_line_utils.c`
 - `get_next_line.h`
 
-# Bonus
+### Bonus
 - `get_next_line_bonus.c`
 - `get_next_line_utils_bonus.c`
 - `get_next_line_bonus.h`
@@ -83,8 +83,9 @@ I used:
 - Empty file.
 - One-line file.
 - File without trailing newline.
+- long line
+- multiple new lines back to back
 - Different `BUFFER_SIZE` values.
-- Standard input. 
 
 # Resources
 - The 42 Subject
