@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:48:31 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 13:51:29 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/01 14:02:58 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 */
 
 #include "get_next_line.h"
+#include <stdio.h>  // printf
+#include <fcntl.h>  // open, O_RDONLY
 
 int	main(int argc, char **argv)
 {
