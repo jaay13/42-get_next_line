@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:49 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 13:02:27 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/01 13:50:38 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*res;
 	unsigned char	*ptr;
-	size_t i;
+	size_t			i;
 
 	if (nmemb > 0 && size > SIZE_MAX / nmemb)
 		return (NULL);

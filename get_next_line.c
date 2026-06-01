@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:21 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 12:51:57 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/01 13:50:09 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char	*append_buf(char *stash, char *buf)
 	char	*new_stash;
 	size_t	len1;
 	size_t	len2;
-	
+
 	len1 = ft_strlen(stash);
 	len2 = ft_strlen(buf);
 	new_stash = malloc(len1 + len2 + 1);
@@ -92,8 +92,8 @@ static char	*get_output_from(char *stash)
 static char	*clean_written_from(char *stash)
 {
 	char	*leftover;
-	size_t		len;
-	size_t		total_len;
+	size_t	len;
+	size_t	total_len;
 
 	len = 0;
 	total_len = ft_strlen(stash);
