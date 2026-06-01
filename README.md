@@ -43,7 +43,7 @@ Example:
 The `main.c` is only for local testing: it opens a file, calls `get_next_line(fd)` in a loop, prints each line, frees it, and closes the file descriptor. 
 
 ## Algorithm
-My implementation keeps a **static stash** that survives between calls. `read()` loads up to `BUFFER_SIZE` bytes at a time, so the function reads the file progressively, unless `BUFFER_SIZE` is large enough to cover the remaining content in one call.
+My implementation keeps a `static stash` that survives between calls. `read()` loads up to `BUFFER_SIZE` bytes at a time, so the function reads the file progressively, unless `BUFFER_SIZE` is large enough to cover the remaining content in one call.
 
 On each call, I first check whether the stash already contains a newline. If it does, I extract everything from the start of the stash up to and including `\n`, then keep the remaining part in the stash for the next call. 
 
