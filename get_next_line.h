@@ -6,18 +6,16 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:52 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 13:50:49 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/01 14:02:47 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>  // open
 # include <stdint.h> // SIZE_MAX
-# include <stdio.h>  // printf
 # include <stdlib.h> // malloc, free
-# include <unistd.h> // read, close
+# include <unistd.h> // read
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
