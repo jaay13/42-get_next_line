@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:49 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 13:50:38 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 13:02:32 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	src_len;
 
 	i = 0;
-	src_len = ft_strlen(src);
 	if (!dstsize)
-		return (src_len);
+		return (0);
 	while (src[i] && i < (dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (src_len);
+	return (i);
 }
