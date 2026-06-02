@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:49 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/02 13:02:32 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:35:38 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_c(const char *s, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] && s[i] != c)
+		i++;
+	if (s[i] == c && s[i] != '\0')
 		i++;
 	return (i);
 }
