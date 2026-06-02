@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:21 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/02 15:49:48 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 16:32:50 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*get_next_line(int fd, char c)
 		return (NULL);
 	if (!stash)
 		stash = ft_calloc(1, 1);
-	if (!ft_strchr(stash, '\n'))
+	if (!ft_strchr(stash, c))
 		stash = read_next_line(fd, stash, c);
 	if (!stash)
 		return (NULL);
