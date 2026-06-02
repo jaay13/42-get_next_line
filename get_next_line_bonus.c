@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:21 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 13:50:45 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:36:15 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ static char	*append_buf(char *stash, char *buf)
 	size_t	len1;
 	size_t	len2;
 
-	len1 = ft_strlen(stash);
-	len2 = ft_strlen(buf);
+	len1 = ft_strlen_c(stash, '\0');
+	len2 = ft_strlen_c(buf, '\0');
 	new_stash = malloc(len1 + len2 + 1);
 	if (!new_stash)
 		return (NULL);
@@ -79,13 +79,9 @@ static char	*get_output_from(char *stash)
 {
 	int	len;
 
-	len = 0;
-	if (!stash[len])
+	if (!stash[0])
 		return (NULL);
-	while (stash[len] && stash[len] != '\n')
-		len++;
-	if (stash[len] == '\n')
-		len++;
+	len = ft_strlen_c(stash, '\n');
 	return (ft_substr(stash, 0, len));
 }
 
@@ -94,13 +90,9 @@ static char	*clean_written_from(char *stash)
 	char	*leftover;
 	size_t	len;
 	size_t	total_len;
-
-	len = 0;
-	total_len = ft_strlen(stash);
-	while (stash[len] && stash[len] != '\n')
-		len++;
-	if (stash[len] == '\n')
-		len++;
+	
+	len = ft_strlen_c(stash, '\n');
+	total_len = ft_strlen_c(stash, '\0');
 	if (!stash[len])
 		return (free(stash), NULL);
 	leftover = ft_substr(stash, len, total_len - len);
