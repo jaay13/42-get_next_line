@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 12:48:31 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/01 14:02:58 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:31:51 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ int	main(int argc, char **argv)
 		printf("files/many_nl_no_text.txt \n");
 		printf("files/text_nl_inbetween.txt \n");
 		printf("files/varying_lengths_nl.txt \n");
+		printf("files/10k.txt \n");
 		printf("files/short_with_nl.txt \n\n");
+		
 		printf("===== FEEL FREE TO ADD YOUR OWN TEST ====== \n");
 		printf("files/YOUR_FILE.txt \n\n");
 		// ./test only works when compiling with cc <files> -o test
 		printf("======= USAGE =======\n");
 		printf("./test FILE_NAME | cat -e\n\n");
+		
 		printf("========= CHECKING MEMORY LEAKS ==========\n");
 		printf("valgrind ./test FILE_NAME | cat -e\n\n");
 	}
