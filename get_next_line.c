@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:21 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/02 14:02:58 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 15:49:23 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static char	*clean_written_from(char *stash)
 	char	*leftover;
 	size_t	len;
 	size_t	total_len;
-	
+
 	len = ft_strlen_c(stash, '\n');
 	total_len = ft_strlen_c(stash, '\0');
 	if (!stash[len])

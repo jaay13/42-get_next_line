@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:21 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/02 14:25:01 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 15:49:48 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,16 @@ static char	*append_buf(char *stash, char *buf)
 
 static char	*get_output_from(char *stash, char c)
 {
-	int	len;
-	char *output;
-	char *new_line;
-	
+	int		len;
+	char	*output;
+	char	*new_line;
+
 	if (!stash[0])
 		return (NULL);
 	len = ft_strlen_c(stash, c);
 	output = ft_substr(stash, 0, len);
-	new_line = malloc (len + 2);
-	if(!new_line)
+	new_line = malloc(len + 2);
+	if (!new_line)
 		return (NULL);
 	ft_strlcpy(new_line, output, len + 1);
 	new_line[len] = '\n';
@@ -100,7 +100,7 @@ static char	*clean_written_from(char *stash, char c)
 	char	*leftover;
 	size_t	len;
 	size_t	total_len;
-	
+
 	len = ft_strlen_c(stash, c);
 	total_len = ft_strlen_c(stash, '\0');
 	if (!stash[len])
