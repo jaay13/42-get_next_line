@@ -6,7 +6,7 @@
 /*   By: jakoch <jakoch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/30 11:50:49 by jakoch            #+#    #+#             */
-/*   Updated: 2026/06/02 14:35:38 by jakoch           ###   ########.fr       */
+/*   Updated: 2026/06/02 14:38:15 by jakoch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
+	s_len = ft_strlen_c(s, '\0');
 	if (start >= s_len)
 	{
 		sub = malloc(1);
