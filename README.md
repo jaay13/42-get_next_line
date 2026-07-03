@@ -31,7 +31,7 @@ for readability and portfolio presentation.
 ├── src/bonus/        Bonus implementation for multiple file descriptors
 ├── tests/main/       Small local test mains
 ├── tests/input/      Input files used for manual testing
-└── extras/live_coding/ my live-coding part version from the evaluation
+└── live_coding/ my live-coding part version from the evaluation
 ```
 
 ## Build
