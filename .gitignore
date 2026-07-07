@@ -9,3 +9,6 @@
 
 # macOS
 .DS_Store
+
+# 42 subject PDFs (not for public distribution)
+docs/*.pdf
